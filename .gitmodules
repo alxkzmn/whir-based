@@ -1,9 +1,12 @@
 [submodule "p3-playground"]
 	path = p3-playground
 	url = https://github.com/alxkzmn/p3-playground
+	branch = whir-based
 [submodule "Whirlaway"]
 	path = Whirlaway
 	url = https://github.com/alxkzmn/Whirlaway
+	branch = whir-based
 [submodule "ProveKit"]
 	path = ProveKit
 	url = https://github.com/alxkzmn/ProveKit
+	branch = whir-based
