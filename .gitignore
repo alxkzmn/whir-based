@@ -1,1 +1,4 @@
 .DS_Store
+scripts/ram_benchmark_results_provekit/
+hp_keccak.json
+hp_poseidon2.json

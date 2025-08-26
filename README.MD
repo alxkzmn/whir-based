@@ -21,3 +21,32 @@ Why WHIR-based? Because WHIR
 ```bash
 ./scripts/run_benches.sh
 ```
+
+## Measuring Prover RAM
+
+- HyperPlonk Keccak
+
+```bash
+VERIFY=0 LOG_B=7 scripts/measure_mem.sh --json hp_keccak.json -- \
+  cargo run --manifest-path p3-playground/hyperplonk/Cargo.toml --release --example koala_bear_keccak
+```
+
+- HyperPlonk Poseidon2
+
+```bash
+VERIFY=0 LOG_B=7 scripts/measure_mem.sh --json hp_poseidon2.json -- \
+  cargo run --manifest-path p3-playground/hyperplonk/Cargo.toml --release --example koala_bear_poseidon2
+```
+
+- Whirlaway Poseidon2
+
+```bash
+VERIFY=0 scripts/measure_mem.sh --json wa_poseidon2.json -- \
+  cargo run --manifest-path Whirlaway/Cargo.toml --release -- --env WHIR_BENCH=poseidon2 --env LOG_N_ROWS=6
+```
+
+ProveKit:
+
+```bash
+./scripts/run_provekit_ram.sh -c poseidon-var -s "6 7 8 9"
+```
