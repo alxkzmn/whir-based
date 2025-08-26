@@ -14,7 +14,7 @@ if [ "$GENERATE_CIRCUITS" == true ]; then
 fi
 
 for log_size in 6 7 8 9; do
-    command_string="cargo run --release --bin noir-r1cs prove ./noir-proof-scheme_${log_size}.nps ./Prover_${log_size}.toml -o ./noir-proof_${log_size}.np"
+    command_string="cargo run --release --bin noir-r1cs prove ./noir-proof-scheme_${log_size}.nps ./Prover_${log_size}.toml"
     hyperfine --runs 10 "$command_string" 
 done 
 popd >/dev/null
@@ -25,7 +25,7 @@ if [ "$GENERATE_CIRCUITS" == true ]; then
 fi
 
 for log_size in 6 7 8 9; do
-    command_string="cargo run --release --bin noir-r1cs prove ./noir-proof-scheme-bytes_${log_size}.nps ./Prover_${log_size}.toml -o ./noir-proof-bytes_${log_size}.np"
+    command_string="cargo run --release --bin noir-r1cs prove ./noir-proof-scheme-bytes_${log_size}.nps ./Prover_${log_size}.toml"
     hyperfine --runs 10 "$command_string" 
 done 
 popd >/dev/null
@@ -36,7 +36,19 @@ if [ "$GENERATE_CIRCUITS" == true ]; then
 fi
 
 for log_size in 5 6 7 8; do
-    command_string="cargo run --release --bin noir-r1cs prove ./noir-proof-scheme_${log_size}.nps ./Prover_${log_size}.toml -o ./noir-proof_${log_size}.np"
+    command_string="cargo run --release --bin noir-r1cs prove ./noir-proof-scheme_${log_size}.nps ./Prover_${log_size}.toml"
+    hyperfine --runs 10 "$command_string" 
+done 
+popd >/dev/null
+
+
+pushd ProveKit/noir-examples/keccak-bytes >/dev/null
+if [ "$GENERATE_CIRCUITS" == true ]; then
+    ./generate_circuits.sh
+fi
+
+for log_size in 5 6 7 8; do
+    command_string="cargo run --release --bin noir-r1cs prove ./noir-proof-scheme_${log_size}.nps ./Prover_${log_size}.toml"
     hyperfine --runs 10 "$command_string" 
 done 
 popd >/dev/null
