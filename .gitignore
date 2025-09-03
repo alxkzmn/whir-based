@@ -3,3 +3,4 @@ scripts/ram_benchmark_results_provekit/
 hp_keccak.json
 hp_poseidon2.json
 wa_poseidon2.json
+keccak_air/target

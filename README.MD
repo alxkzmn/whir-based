@@ -42,7 +42,7 @@ VERIFY=0 LOG_B=7 scripts/measure_mem.sh --json hp_poseidon2.json -- \
 
 ```bash
 VERIFY=0 scripts/measure_mem.sh --json wa_poseidon2.json -- \
-  cargo run --manifest-path Whirlaway/Cargo.toml --release -- --env WHIR_BENCH=poseidon2 --env LOG_N_ROWS=6
+  cargo run --manifest-path Whirlaway/Cargo.toml --release -- --env WHIR_BENCH=poseidon2 --env LOG_B=6
 ```
 
 ProveKit:
