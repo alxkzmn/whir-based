@@ -45,6 +45,13 @@ VERIFY=0 scripts/measure_mem.sh --json wa_poseidon2.json -- \
   cargo run --manifest-path Whirlaway/Cargo.toml --release -- --env WHIR_BENCH=poseidon2 --env LOG_B=6
 ```
 
+- Whirlaway Keccak
+
+```bash
+VERIFY=0 WHIR_BENCH=keccak scripts/measure_mem.sh --json wa_keccak.json -- \
+  cargo run --manifest-path Whirlaway/Cargo.toml --release -- --env LOG_B=5
+```
+
 ProveKit:
 
 ```bash

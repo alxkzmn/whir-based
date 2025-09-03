@@ -19,5 +19,5 @@ printf '\nRunning Whirlaway Poseidon2 benchmark...\n'
 cargo bench --manifest-path Whirlaway/Cargo.toml --bench poseidon2_proof
 
 # Build and run Whirlaway Keccak benchmark
-#printf '\nRunning Whirlaway Keccak benchmark...\n'
-#WHIR_BENCH=keccak cargo run --release --manifest-path Whirlaway/Cargo.toml --quiet
+printf '\nRunning Whirlaway Keccak benchmark...\n'
+cargo bench --manifest-path Whirlaway/Cargo.toml --bench keccak_proof
